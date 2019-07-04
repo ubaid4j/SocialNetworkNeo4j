@@ -10,10 +10,10 @@
 <ol>
 	<h4>Building Instruction</h4>
 	Do the following steps
-	<li><strong>git clone 'https://github.com/UbaidurRehman1/SocialGraphNeo4J.git'</strong></li>
-	<li><strong>cd SocialGraphNeo4J</strong></li>
+	<li><strong>git clone 'https://github.com/UbaidurRehman1/SocialNetworkNeo4j.git'</strong></li>
+	<li><strong>cd SocialNetworkNeo4j</strong></li>
 	<li><strong>mvn clean compile assembly:single</strong></li>
-	<li><strong>java -jar FileExtractor-1-jar-with-dependencies.jar</strong> to run the jar</li>
+	<li><strong>java -jar SocialNetworkNeo4j-pr.jar</strong> to run the jar</li>
 </ol>
 <ol>
 	<h4>Requirements</h4>
