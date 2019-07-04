@@ -14,12 +14,12 @@
 	<li><strong>cd SocialNetworkNeo4j</strong></li>
 	<li><strong>mvn clean compile assembly:single</strong></li>
 	<li>cd target</li>
-	<li><strong>java -jar SocialNetworkNeo4j-1-jar-with-dependencies.jar</strong> to run the jar</li>
+	<li><strong>java -jar  SocialGraph-0.0.1-SNAPSHOT-jar-with-dependencies.jar</strong> to run the jar</li>
 </ol>
 <ol>
 	<h4>Requirements</h4>
-	<li>Java JDK > 8</li>
-	<li>Apache MAVEN</li>
+	<li>Java JDK 12 (required)</li>
+	<li>Apache MAVEN 3.6.1 (required)</li>
 	<li>set JAVA_HOME variable (optional)</li>
 	<li>set MAVEN_HOME (optional)</li>
 </ol>
