@@ -14,7 +14,7 @@
 	<li><strong>cd SocialNetworkNeo4j</strong></li>
 	<li><strong>mvn clean compile assembly:single</strong></li>
 	<li>cd target</li>
-	<li><strong>java -jar SocialNetworkNeo4j-pr.jar</strong> to run the jar</li>
+	<li><strong>java -jar SocialNetworkNeo4j-1-jar-with-dependencies.jar</strong> to run the jar</li>
 </ol>
 <ol>
 	<h4>Requirements</h4>
