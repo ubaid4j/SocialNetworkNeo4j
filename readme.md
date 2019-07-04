@@ -24,5 +24,17 @@
 </ol>
 
 <ol>
-	<h4>UML Specs</h4>
+	<h4>UML Specs [Very First Prototype]</h4>
+	<li>
+		<h4>Flow Diagram of Graph<h4>
+		<div>
+			<img src="./imgs/Graph.png"></img>
+		</div>
+	</li>
+	<li>
+		<h4>UML diagram of User</h4>
+		<div>
+			<img src="./imgs/uml.png"></img>
+		</div>
+	</li>
 </ol>
