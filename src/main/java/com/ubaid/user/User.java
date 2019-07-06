@@ -1,5 +1,8 @@
 package com.ubaid.user;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class User
 {
 	private int age;
@@ -12,8 +15,9 @@ public class User
 	public void setId(int id) {
 		this.id = id;
 	}
-	public User(int age, String email, String name) {
+	public User(int id, int age, String email, String name) {
 		super();
+		this.id = id;
 		this.age = age;
 		this.email = email;
 		this.name = name;

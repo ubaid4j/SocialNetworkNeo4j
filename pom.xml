@@ -7,6 +7,22 @@
 	<properties>
 		<maven.compiler.source>12</maven.compiler.source>
 		<maven.compiler.target>12</maven.compiler.target>
+		
+		
+				
+		<spring.version>5.1.7.RELEASE</spring.version>
+		<hibernatecore.version>5.4.3.Final</hibernatecore.version>
+		<hibernatevalidator.versoin>6.0.16.Final</hibernatevalidator.versoin>
+		<jdbc.version>8.0.16</jdbc.version>
+		<c3p0.version>0.9.1.2</c3p0.version>
+		<servlet.version>4.0.1</servlet.version>
+		<commonlogging.version>1.2</commonlogging.version>
+		<jstl.version>1.2</jstl.version>
+		<jstljsp.version>1.2.2</jstljsp.version>
+		<postconstruct.version>1.3.2</postconstruct.version>
+		<aspect.version>1.9.4</aspect.version>
+		<springsecurity.version>5.1.5.RELEASE</springsecurity.version>
+	
 	</properties>
 
 	<dependencies>
@@ -28,6 +44,299 @@
 	    	<artifactId>jgrapht-io</artifactId>
 	    	<version>1.3.1</version>
 		</dependency>
+
+
+		<!-- =====================================HIBERNATE CORE Version 5.4.3============================================= -->
+  		<dependency>
+    		<groupId>org.hibernate</groupId>
+    		<artifactId>hibernate-core</artifactId>
+    		<version>${hibernatecore.version}</version>
+		</dependency>
+		<!-- ======================================================================================= -->
+		
+	
+		<!-- =================================HIBERNATE VALIDATOR================================== -->
+		<dependency>
+	  		<groupId>org.hibernate.validator</groupId>
+	  		<artifactId>hibernate-validator</artifactId>
+	  		<version>${hibernatevalidator.versoin}</version>
+		</dependency>
+	
+		<dependency>
+	  		<groupId>org.hibernate.validator</groupId>
+	  		<artifactId>hibernate-validator-cdi</artifactId>
+	  		<version>${hibernatevalidator.versoin}</version>
+		</dependency>
+	
+
+		<dependency>
+		  	<groupId>org.hibernate.validator</groupId>
+		  	<artifactId>hibernate-validator-annotation-processor</artifactId>
+		  	<version>${hibernatevalidator.versoin}</version>
+		</dependency>
+		<!-- ======================================================================================= -->
+	
+	
+	
+		<!-- ============================JDBC Connector============================================ -->
+  		<dependency>
+    		<groupId>mysql</groupId>
+    		<artifactId>mysql-connector-java</artifactId>
+    		<version>${jdbc.version}</version>
+		</dependency>
+		
+			<!-- c3p0 is an easy-to-use library for augmenting traditional
+		 (DriverManager-based) JDBC drivers with JNDI-bindable DataSources -->
+		<dependency>
+    		<groupId>c3p0</groupId>
+    		<artifactId>c3p0</artifactId>
+    		<version>${c3p0.version}</version>
+		</dependency>
+		<!-- ======================================================================================= -->
+		
+		
+
+		<!-- ===============================SERVLET============================================== -->
+		<dependency>
+    		<groupId>javax.servlet</groupId>
+    		<artifactId>javax.servlet-api</artifactId>
+    		<version>${servlet.version}</version>
+    		<scope>provided</scope>
+		</dependency>
+		<!-- ======================================================================================= -->
+		
+		
+	
+	
+		<!-- ===============================Common Loggings========================================= -->		
+		<dependency>
+		    <groupId>commons-logging</groupId>
+		    <artifactId>commons-logging</artifactId>
+		    <version>${commonlogging.version}</version>
+		</dependency>
+		<!-- ======================================================================================= -->
+				
+
+
+
+
+		<!--  ======================================JSTL related libraries================================ -->
+		<dependency>
+		    <groupId>javax.servlet.jsp.jstl</groupId>
+		    <artifactId>jstl-api</artifactId>
+		    <version>${jstl.version}</version>
+		</dependency>
+
+	
+		<dependency>
+		    <groupId>javax.servlet.jsp.jstl</groupId>
+		    <artifactId>javax.servlet.jsp.jstl-api</artifactId>
+		    <version>${jstljsp.version}</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jstl</artifactId>
+		    <version>${jstl.version}</version>
+		</dependency>
+		<!-- ===================================================================================================== -->		
+		
+	
+
+		<!-- ====================================POST CONSTRUCT=================================================== -->
+		<!-- Post construct -->
+		<dependency>
+		    <groupId>javax.annotation</groupId>
+		    <artifactId>javax.annotation-api</artifactId>
+		    <version>${postconstruct.version}</version>
+		</dependency>
+		<!-- ====================================================================================================== -->
+
+
+
+
+		<!-- ==================================Spring Version 5.1.7.RELEASE======================================== -->
+		<!-- spring AOP -->
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-aop</artifactId>
+    		<version>${spring.version}</version>
+		</dependency>
+
+		<!-- AspectJ required for Spring AOP -->
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjweaver</artifactId>
+		    <version>${aspect.version}</version>
+		</dependency>
+
+
+		<!-- spring aspects -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-aspects</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring beans -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-beans</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring context -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring context indexer -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-indexer</artifactId>
+		    <version>${spring.version}</version>
+		    <scope>optional</scope>
+		</dependency>
+
+		<!-- spring context support -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-support</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+
+		<!-- spring core -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-core</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring expression -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-expression</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring instrument -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-instrument</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+
+		<!-- spring JCL -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jcl</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring JDBC -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring JMS -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jms</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring message -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-messaging</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring ORM -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-orm</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring OXM -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-oxm</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+
+		<!-- spring test -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		    <version>${spring.version}</version>
+		    <scope>test</scope>
+		</dependency>
+
+
+		<!-- spring TX -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-tx</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring web -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-web</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring web FLUX -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-webflux</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring web MVC -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-webmvc</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring web-socket -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-websocket</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		<!-- ======================================================================================================= -->
+		
+		
+		
+		
+		<!-- ====================================Spring Security Version 5.1.5.RELEASE============================== -->
+		<!-- Spring Web Security  -->
+		<dependency>
+		  	<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${springsecurity.version}</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>org.springframework.security</groupId>
+    		<artifactId>spring-security-config</artifactId>
+    		<version>${springsecurity.version}</version>
+		</dependency>
+		<!-- ======================================================================================================= -->
+		
+		
 	
 	
 	</dependencies>

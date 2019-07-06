@@ -106,7 +106,7 @@ public class GraphImp
 			String lastName = nameObj.lastName();
 			String email = String.format("%s%s.%sseecs@seecs.edu.pk", lastName, firstName, batch[random.nextInt(9)]);
 			int age = random.nextInt(6) + 18;
-			users[i] = new User(age, email, name);
+			users[i] = new User(0, age, email, name);
 		}
 		
 		return users;
