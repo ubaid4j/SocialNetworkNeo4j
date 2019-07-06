@@ -1,7 +1,7 @@
 <h2 align="center">Social Graph</h2>
 <ol>
 	<h3>About</h3>
-	<li>Social graph implemented in Java (To do)</li>
+	<li>Very first prototype is completed [Only graph generation]</li>
 	<li>To do</li>
 	<li>To do</li>
 	<li>To do</li>	
