@@ -1,6 +1,7 @@
 package com.ubaid.app;
 
 import java.io.File;
+import java.util.Scanner;
 
 import org.jgrapht.io.ExportException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -26,7 +27,29 @@ public class App
 		String curDir = 
 				context.getBean("currentDir", String.class);
 		
-		SocialGraph graph = gService.getDefaultGraph();
+		
+		Scanner input = new Scanner(System.in);
+		int vertices = 0;
+		int edges = 0;
+		SocialGraph graph = null;
+
+		
+		try
+		{
+			System.out.println("Please Mention Vertices for Graph: ");
+			vertices = input.nextInt();
+			System.out.println("Please Mention Edges for Graph");
+			edges = input.nextInt();
+			System.out.println("Creating graph of " + vertices + " vertices and " + edges + " edges");
+			graph = gService.getCustomGraph(vertices, edges);
+		}
+		catch(Exception exp)
+		{
+			System.out.println("Some Unknown Errors occured, Creating Default graph of 20 vertices and 20 edges");
+			graph = gService.getDefaultGraph();
+		}
+		
+		
 		
 		File file = new File(curDir + "/graph.dot");
 		
