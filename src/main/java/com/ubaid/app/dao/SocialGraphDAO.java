@@ -3,13 +3,13 @@ package com.ubaid.app.dao;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.ubaid.app.dao.graph.SocialGraph;
 import com.ubaid.app.service.UserService;
 import com.ubaid.user.User;
 
-@Component
+@Repository
 public class SocialGraphDAO implements GraphDAO
 {
 

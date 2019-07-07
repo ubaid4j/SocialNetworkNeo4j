@@ -1,12 +1,12 @@
 package com.ubaid.app.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.ubaid.app.dao.generator.UserGenerator;
 import com.ubaid.user.User;
 
-@Component
+@Repository
 public class UserDAOImp implements UserDAO
 {
 

@@ -9,4 +9,5 @@ import com.ubaid.app.dao.graph.SocialGraph;
 public interface VisualizeGraphService
 {
 	public void writeGraph(File file, SocialGraph graph) throws ExportException;
+	public int visualize(File file, SocialGraph graph) throws Exception;
 }

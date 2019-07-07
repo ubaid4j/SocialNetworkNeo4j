@@ -2,9 +2,9 @@
 <ol>
 	<h3>About</h3>
 	<li>Very first prototype is completed [Only graph generation]</li>
-	<li>To do</li>
-	<li>To do</li>
-	<li>To do</li>	
+	<li>#create myfile.dot.png dot -Tpng myfile.dot -O</li>
+	<li>Code Refactoring Done</li>
+	<li></li>	
 </ol>
 
 <ol>
@@ -19,6 +19,7 @@
 <ol>
 	<h4>Requirements</h4>
 	<li>Java JDK 12 (required)</li>
+	<li>dot - graphviz version 2.38.0 (20140413.2041)</li>
 	<li>Apache MAVEN 3.6.1 (required)</li>
 	<li>set JAVA_HOME variable (optional)</li>
 	<li>set MAVEN_HOME (optional)</li>
