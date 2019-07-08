@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ubaid.app.dao.UserDAO;
-import com.ubaid.user.User;
+import com.ubaid.entity.User;
 
 @Service
 public class UserGenService implements UserService

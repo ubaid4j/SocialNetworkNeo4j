@@ -17,7 +17,7 @@ import org.jgrapht.io.GraphExporter;
 
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
-import com.ubaid.user.User;
+import com.ubaid.entity.User;
 
 public class GraphImp
 {

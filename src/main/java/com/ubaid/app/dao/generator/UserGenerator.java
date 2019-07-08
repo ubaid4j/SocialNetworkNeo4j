@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.github.javafaker.Name;
-import com.ubaid.user.User;
+import com.ubaid.entity.User;
 
 @Component
 public class UserGenerator

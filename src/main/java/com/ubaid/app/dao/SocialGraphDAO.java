@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ubaid.app.dao.graph.SocialGraph;
 import com.ubaid.app.service.UserService;
-import com.ubaid.user.User;
+import com.ubaid.entity.User;
 
 @Repository
 public class SocialGraphDAO implements GraphDAO
