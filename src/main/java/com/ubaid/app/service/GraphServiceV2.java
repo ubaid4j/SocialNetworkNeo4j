@@ -22,4 +22,11 @@ public interface GraphServiceV2
 	 * @throws RuntimeException
 	 */
 	public void addAll(User[] users) throws RuntimeException;
+	
+	/**
+	 * This method will delete all nodes and their relationships 
+	 * in the database 
+	 * @throws RuntimeException
+	 */
+	public void deleteAll() throws RuntimeException;
 }

@@ -25,4 +25,10 @@ public class SocialGraphDAOV2 implements GraphDAOV2
 		transaction.commit();
 	}
 
+	@Override
+	public void deleteAll() throws RuntimeException
+	{
+		session.deleteAll(User.class);
+	}
+
 }

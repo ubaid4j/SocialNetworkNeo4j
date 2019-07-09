@@ -21,4 +21,11 @@ public interface GraphDAOV2
 	 * @throws RuntimeException
 	 */
 	public void addAll(User[] users) throws RuntimeException;
+	
+	/**
+	 * this method will delete all nodes and their relations
+	 * in the database
+	 * @throws RuntimeException
+	 */
+	public void deleteAll() throws RuntimeException;
 }

@@ -2,6 +2,10 @@ package com.ubaid.app;
 
 import java.io.File;
 import java.util.Scanner;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 import org.jgrapht.io.ExportException;
 import org.neo4j.ogm.session.Session;
@@ -20,6 +24,14 @@ public class App
 {
 	public static void main(String [] args)
 	{
+		
+
+		LogManager.getLogManager().reset();
+		Logger rootLogger = LogManager.getLogManager().getLogger("");
+		rootLogger.setLevel(Level.SEVERE);
+		for (Handler h : rootLogger.getHandlers())
+		    h.setLevel(Level.SEVERE);
+		
 		AnnotationConfigApplicationContext context = 
 				new AnnotationConfigApplicationContext(Config.class);
 		
@@ -38,7 +50,10 @@ public class App
 		
 		RandomlyRalatedUserDAO tmp1 = context.getBean("randomlyRelatedUserDAOImp", RandomlyRalatedUserDAO.class);
 		
-		User[] users = tmp1.makeRendomlyRelatedUsers(50, 50);
+		User[] users = tmp1.makeRendomlyRelatedUsers(300, 200);
+		
+
+		
 		
 		GraphServiceV2 gS = context.getBean("graphServiceV2Imp", GraphServiceV2.class);
 		

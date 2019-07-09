@@ -19,4 +19,10 @@ public class GraphServiceV2Imp implements GraphServiceV2
 		graphDAOV2.addAll(users);
 	}
 
+	@Override
+	public void deleteAll() throws RuntimeException
+	{
+		graphDAOV2.deleteAll();
+	}
+
 }
