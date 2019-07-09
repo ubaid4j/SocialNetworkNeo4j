@@ -3,7 +3,7 @@ package com.ubaid.app.decorator;
 import org.jgrapht.io.ComponentNameProvider;
 import org.springframework.stereotype.Component;
 
-import com.ubaid.entity.User;
+import com.ubaid.User.User;
 
 @Component
 public class VertexId implements ComponentNameProvider<User>

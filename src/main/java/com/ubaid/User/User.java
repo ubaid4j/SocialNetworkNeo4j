@@ -1,4 +1,4 @@
-package com.ubaid.entity;
+package com.ubaid.User;
 
 import org.springframework.stereotype.Component;
 

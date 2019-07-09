@@ -5,7 +5,7 @@ import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
 import org.springframework.stereotype.Component;
 
-import com.ubaid.entity.User;
+import com.ubaid.User.User;
 
 @Component
 public class SocialGraph extends DefaultDirectedGraph<User, DefaultEdge>

@@ -1,5 +1,6 @@
 package com.ubaid.entity;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import org.neo4j.ogm.annotation.GeneratedValue;
@@ -18,8 +19,12 @@ public class UserT1
 	private String email;
 	private String name;
 	
+	public UserT1()
+	{
+
+	}
 	
-	
+
 	/**
 	 * @param age
 	 * @param email
@@ -31,6 +36,7 @@ public class UserT1
 		this.email = email;
 		this.name = name;
 	}
+
 	
 	public Long getId() {
 		return id;
@@ -62,10 +68,17 @@ public class UserT1
 		return "UserT1 [id=" + id + ", name=" + name + "]";
 	}
 
-	@Relationship(type = "follow", direction = "INCOMING")
-	private List<UserT1> followers;
 
 	@Relationship(type = "follow", direction = "OUTGOING")
-	private List<UserT1> followings;
+	private List<UserT1> followings = new LinkedList<UserT1>();
+
+	
+	public List<UserT1> getFollowings() {
+		return followings;
+	}
+
+	public void setFollowings(List<UserT1> followings) {
+		this.followings = followings;
+	}
 	
 }

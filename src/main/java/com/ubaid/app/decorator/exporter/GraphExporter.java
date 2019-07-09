@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import com.ubaid.entity.User;
+import com.ubaid.User.User;
 
 @Component
 public class GraphExporter extends DOTExporter<User, DefaultEdge>
