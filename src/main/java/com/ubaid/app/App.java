@@ -4,12 +4,17 @@ import java.io.File;
 import java.util.Scanner;
 
 import org.jgrapht.io.ExportException;
+import org.neo4j.ogm.session.Session;
+import org.neo4j.ogm.session.SessionFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.ubaid.app.config.Config;
+import com.ubaid.app.dao.RandomlyRalatedUserDAO;
 import com.ubaid.app.dao.graph.SocialGraph;
 import com.ubaid.app.service.GraphService;
+import com.ubaid.app.service.GraphServiceV2;
 import com.ubaid.app.service.VisualizeGraphService;
+import com.ubaid.entity.User;
 
 public class App
 {
@@ -27,7 +32,27 @@ public class App
 		String curDir = 
 				context.getBean("currentDir", String.class);
 		
+
+		Session session = context.getBean("neo4jSession", Session.class);
+
 		
+		RandomlyRalatedUserDAO tmp1 = context.getBean("randomlyRelatedUserDAOImp", RandomlyRalatedUserDAO.class);
+		
+		User[] users = tmp1.makeRendomlyRelatedUsers(50, 50);
+		
+		GraphServiceV2 gS = context.getBean("graphServiceV2Imp", GraphServiceV2.class);
+		
+		
+		try
+		{
+			gS.addAll(users);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+/**		
 		Scanner input = new Scanner(System.in);
 		int vertices = 0;
 		int edges = 0;
@@ -67,7 +92,7 @@ public class App
 		}
 		
 		assert(graph != null);
-		
+*/		
 		context.close();
 	}
 	

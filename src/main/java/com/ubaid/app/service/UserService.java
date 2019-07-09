@@ -1,6 +1,6 @@
 package com.ubaid.app.service;
 
-import com.ubaid.User.User;
+import com.ubaid.entity.User;
 
 public interface UserService
 {

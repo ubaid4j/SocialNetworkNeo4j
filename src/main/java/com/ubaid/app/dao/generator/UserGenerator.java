@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.github.javafaker.Name;
-import com.ubaid.User.User;
+import com.ubaid.entity.User;
 
 @Component
 public class UserGenerator
@@ -40,7 +40,7 @@ public class UserGenerator
 		String name = firstName + " " + lastName; 
 		String email = String.format("%s%s.%sseecs@seecs.edu.pk", lastName, firstName, batch[random.nextInt(9)]);
 		int age = random.nextInt(6) + 18;
-		return new User(id, age, email, name);
+		return new User(age, email, name);
 	}
 
 }

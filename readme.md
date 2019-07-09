@@ -1,9 +1,9 @@
 <h2 align="center">Social Graph</h2>
 <ol>
-	<h3>About</h3>
-	<li>Very first prototype is completed [Only graph generation]</li>
-	<li>#create myfile.dot.png dot -Tpng myfile.dot -O</li>
-	<li>Code Refactoring Done</li>
+	<h3>To do's</h3>
+	<li>Merget Entity and User</li>
+	<li></li>
+	<li></li>
 	<li></li>	
 </ol>
 

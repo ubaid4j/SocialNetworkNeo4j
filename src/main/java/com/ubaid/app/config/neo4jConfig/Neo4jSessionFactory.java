@@ -1,9 +1,12 @@
-package com.ubaid.app;
+package com.ubaid.app.config.neo4jConfig;
 
 import org.neo4j.ogm.config.Configuration;
 import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.session.SessionFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Neo4jSessionFactory
 {
 		private final static Configuration configuration = new Configuration.Builder().uri("bolt://localhost:7687").credentials("neo4j", "password").build();
@@ -18,6 +21,7 @@ public class Neo4jSessionFactory
 	    private Neo4jSessionFactory() {
 	    }
 
+	    @Bean("neo4jSession")
 	    public Session getNeo4jSession() {
 	        return sessionFactory.openSession();
 	    }

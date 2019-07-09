@@ -1,6 +1,6 @@
 package com.ubaid.app.dao;
 
-import com.ubaid.User.User;
+import com.ubaid.entity.User;
 
 public interface UserDAO
 {

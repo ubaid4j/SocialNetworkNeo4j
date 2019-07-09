@@ -5,9 +5,9 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.ubaid.User.User;
 import com.ubaid.app.dao.graph.SocialGraph;
 import com.ubaid.app.service.UserService;
+import com.ubaid.entity.User;
 
 @Repository
 public class SocialGraphDAO implements GraphDAO

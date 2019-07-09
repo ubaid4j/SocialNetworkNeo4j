@@ -8,10 +8,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 @ComponentScan(basePackages = {"com.ubaid.app"})
 @EnableAspectJAutoProxy
+@PropertySource("classpath:/Neo4JAuth.properties")
 public class Config
 {
 	@Bean
@@ -27,6 +30,7 @@ public class Config
 	}
 	
 	@Bean("random")
+	@Scope("prototype")
 	public Random random()
 	{
 		return new Random();
@@ -37,4 +41,5 @@ public class Config
 	{
 		return System.getProperty("user.dir");
 	}
+		
 }
