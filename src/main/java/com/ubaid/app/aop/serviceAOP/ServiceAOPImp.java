@@ -24,19 +24,17 @@ public class ServiceAOPImp extends ServiceAOP
 	@Autowired
 	private LogLoopService logLoopService;
 	
-	@Before("ingestUsersDAO()")
+	@Before("ingestUsersService()")
 	public void beforeEnteringToGraphDAOV2AddAllMethod(JoinPoint joinPoint)
 	{	
-		
 		System.out.println("Adding Users In the database");
 		System.out.println("Time Noted" + LocalDate.now());
 		logLoopService.startMessageLoop("Please Wait--- It will not take a long");
 		start = System.currentTimeMillis();
-
 	}
 	
 	
-	@After("ingestUsersDAO()")
+	@After("ingestUsersService()")
 	public void afterReturingFromGraphDAOV2AllAllMethod(JoinPoint joinPoint)
 	{
 		
@@ -50,7 +48,19 @@ public class ServiceAOPImp extends ServiceAOP
 
 		long duration = end - start;
 		
-		System.out.printf("\nThe total time spent for Ingesting "
-				+ "%d Users in the database is %.6f seconds", size, (double) duration/ (double) 1000);
+		System.out.printf("\n[Info]\tThe total time spent for Ingesting "
+				+ "%d Users in the database is %.6f seconds\n", size, (double) duration/ (double) 1000);
+	}
+	
+	@Before("deleteAllService()")
+	public void beforeDeleting()
+	{
+		System.out.println("[Info]\tDeleting all nodes in the graph");
+	}
+	
+	@After("deleteAllService()")
+	public void afterDeleteing()
+	{
+		System.out.println("[Info]\tAll nodes in the database deleted");
 	}
 }

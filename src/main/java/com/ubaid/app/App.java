@@ -1,23 +1,16 @@
 package com.ubaid.app;
 
-import java.io.File;
 import java.util.Scanner;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
-import org.jgrapht.io.ExportException;
-import org.neo4j.ogm.session.Session;
-import org.neo4j.ogm.session.SessionFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.ubaid.app.config.Config;
 import com.ubaid.app.dao.RandomlyRalatedUserDAO;
-import com.ubaid.app.dao.graph.SocialGraph;
-import com.ubaid.app.service.GraphService;
 import com.ubaid.app.service.GraphServiceV2;
-import com.ubaid.app.service.VisualizeGraphService;
 import com.ubaid.entity.User;
 
 public class App
@@ -35,22 +28,10 @@ public class App
 		AnnotationConfigApplicationContext context = 
 				new AnnotationConfigApplicationContext(Config.class);
 		
-		GraphService gService =
-				context.getBean("socialGraphService", GraphService.class);
+			
+		RandomlyRalatedUserDAO tmp1
+			= context.getBean("randomlyRelatedUserDAOImp", RandomlyRalatedUserDAO.class);
 		
-		VisualizeGraphService vgs = 
-				context.getBean("visualizeGraphImp", VisualizeGraphService.class);
-		
-		String curDir = 
-				context.getBean("currentDir", String.class);
-		
-
-		Session session = context.getBean("neo4jSession", Session.class);
-
-		
-		RandomlyRalatedUserDAO tmp1 = context.getBean("randomlyRelatedUserDAOImp", RandomlyRalatedUserDAO.class);
-		
-		User[] users = tmp1.makeRendomlyRelatedUsers(300, 200);
 		
 
 		
@@ -58,20 +39,11 @@ public class App
 		GraphServiceV2 gS = context.getBean("graphServiceV2Imp", GraphServiceV2.class);
 		
 		
-		try
-		{
-			gS.addAll(users);
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
 		
-/**		
+	
 		Scanner input = new Scanner(System.in);
 		int vertices = 0;
 		int edges = 0;
-		SocialGraph graph = null;
 
 		
 		try
@@ -81,33 +53,18 @@ public class App
 			System.out.println("Please Mention Edges for Graph");
 			edges = input.nextInt();
 			System.out.println("Creating graph of " + vertices + " vertices and " + edges + " edges");
-			graph = gService.getCustomGraph(vertices, edges);
+			
+			User[] users = tmp1.makeRendomlyRelatedUsers(vertices, edges);
+			gS.deleteAll();
+			gS.addAll(users);
+			
 		}
 		catch(Exception exp)
 		{
-			System.out.println("Some Unknown Errors occured, Creating Default graph of 20 vertices and 20 edges");
-			graph = gService.getDefaultGraph();
+			System.out.println("Some Unknown Errors occured");
 		}
 		
-		
-		
-		File file = new File(curDir + "/graph.dot");
-		
-		try
-		{
-			vgs.visualize(file, graph);
-		}
-		catch (ExportException e)
-		{
-			e.printStackTrace();
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-		
-		assert(graph != null);
-*/		
+		input.close();
 		context.close();
 	}
 	

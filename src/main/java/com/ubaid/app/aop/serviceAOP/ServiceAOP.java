@@ -6,5 +6,8 @@ public abstract class ServiceAOP
 {
 	
 	@Pointcut("execution(* com.ubaid.app.dao.GraphDAOV2.addAll(*)) throws RuntimeException")
-	public void ingestUsersDAO() {}
+	public void ingestUsersService() {}
+
+	@Pointcut("execution(* com.ubaid.app.dao.GraphDAOV2.deleteAll(*)) throws RuntimeException")
+	public void deleteAllService() {}
 }

@@ -28,11 +28,11 @@ public class WaitService implements Runnable
 		
 		while(loop)
 		{
-			System.out.println("\n" + message + "\n");
+			System.out.println("[Info]\t" + message + "");
 			
 			try
 			{
-				Thread.sleep(1500);
+				Thread.sleep(1000);
 			}
 			catch (InterruptedException e)
 			{

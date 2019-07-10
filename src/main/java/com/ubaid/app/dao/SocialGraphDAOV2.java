@@ -23,6 +23,7 @@ public class SocialGraphDAOV2 implements GraphDAOV2
 			session.save(user);
 		}
 		transaction.commit();
+		transaction.close();
 	}
 
 	@Override
