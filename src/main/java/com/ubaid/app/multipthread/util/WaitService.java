@@ -28,7 +28,7 @@ public class WaitService implements Runnable
 		
 		while(loop)
 		{
-			System.out.println("[Info]\t" + message + "");
+			System.out.println("[INFO]: " + message + "");
 			
 			try
 			{

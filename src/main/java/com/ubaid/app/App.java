@@ -18,29 +18,26 @@ public class App
 	public static void main(String [] args)
 	{
 		
-
+		//setting any logger disable
 		LogManager.getLogManager().reset();
 		Logger rootLogger = LogManager.getLogManager().getLogger("");
 		rootLogger.setLevel(Level.SEVERE);
 		for (Handler h : rootLogger.getHandlers())
 		    h.setLevel(Level.SEVERE);
 		
+		//getting context
 		AnnotationConfigApplicationContext context = 
 				new AnnotationConfigApplicationContext(Config.class);
 		
-			
+		
+		//random users
 		RandomlyRalatedUserDAO tmp1
 			= context.getBean("randomlyRelatedUserDAOImp", RandomlyRalatedUserDAO.class);
 		
-		
-
-		
-		
+		//graph service [having addAll, deleteAll and query]
 		GraphServiceV2 gS = context.getBean("graphServiceV2Imp", GraphServiceV2.class);
 		
 		
-		
-	
 		Scanner input = new Scanner(System.in);
 		int vertices = 0;
 		int edges = 0;
@@ -52,7 +49,6 @@ public class App
 			vertices = input.nextInt();
 			System.out.println("Please Mention Edges for Graph");
 			edges = input.nextInt();
-			System.out.println("Creating graph of " + vertices + " vertices and " + edges + " edges");
 			
 			User[] users = tmp1.makeRendomlyRelatedUsers(vertices, edges);
 			gS.deleteAll();
@@ -61,11 +57,12 @@ public class App
 		}
 		catch(Exception exp)
 		{
-			System.out.println("Some Unknown Errors occured");
+			System.out.println("[ERROR]: Some Unknown Errors occured");
 		}
 		
 		input.close();
 		context.close();
+		System.exit(0);
 	}
 	
 }
